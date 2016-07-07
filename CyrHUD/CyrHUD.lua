@@ -315,8 +315,8 @@ function CyrHUD.addonInit()
         --NOTE: If you see this before 4/1, please don't share
         table.insert(self.menuOptions,{
             type = "checkbox",
-            name = "April Fools Fix",
-            tooltip = "Turn on to restore normal coloring",
+            name = GetString(SI_CYRHUD_APRIL1),
+            tooltip = GetString(SI_CYRHUD_APRIL1_TOOLTIP),
             getFunc = function() return CyrHUD.cfg.aprOff or false end,
             setFunc = function(v) CyrHUD.cfg.aprOff = v; CyrHUD:refresh() end,
         })

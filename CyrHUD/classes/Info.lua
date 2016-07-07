@@ -1,4 +1,4 @@
--- This file is part of CyrHUD
+﻿-- This file is part of CyrHUD
 --
 -- (C) 2015 Scott Yeskie (Sasky)
 --
@@ -44,7 +44,7 @@ CyrHUD.info.newAttackColor = colors.redTrans
 CyrHUD.info.endAttackColor = colors.greyTrans
 CyrHUD.info.defaultBGColor = colors.blackTrans
 CyrHUD.info.invisColor = colors.invisible
-CyrHUD.info.fontMain = CryHUD.language.font
+CyrHUD.info.fontMain = GetString(SI_CYRHUD_FONT)
 CyrHUD.info[ALLIANCE_NONE] = {}
 CyrHUD.info[ALLIANCE_NONE].color = colors.white
 CyrHUD.info[AD] = {}

@@ -23,45 +23,38 @@ CyrHUD.menuPanel = {
     version = "1.1.0",
 }
 
-local CZ = "|cC5C29E" -- ZOS standard text color
-local CR = "|cFFFFFF" -- Reset color
-
 CyrHUD.menuOptions = {
     {
         type = "checkbox",
-        name = "Auto-hide Default Quest Tracker",
-        tooltip = "Hides quest trackers when CyrHUD is shown",
+        name = GetString(SI_CYRHUD_QT_DEFAULT),
+        tooltip = GetString(SI_CYRHUD_QT_TOOLTIP),
         getFunc = function() return CyrHUD.cfg.zosTrackerDisable or false end,
         setFunc = function(v) CyrHUD.cfg.zosTrackerDisable = v end
     },
     {
         type = "checkbox",
-        name = "Auto-hide Wykkyd's Quest Tracker",
-        tooltip = "Hides quest trackers when CyrHUD is shown",
+        name = GetString(SI_CYRHUD_QT_WYKKYD),
+        tooltip = GetString(SI_CYRHUD_QT_TOOLTIP),
         getFunc = function() return CyrHUD.cfg.trackerDisable or false end,
         setFunc = function(v) CyrHUD.cfg.trackerDisable = v end
     },
     {
         type = "checkbox",
-        name = "Population bars for flags",
-        tooltip = "Shows current population instead of alliance flag in summary",
+        name = GetString(SI_CYRHUD_POPBAR),
+        tooltip = GetString(SI_CYRHUD_POPBAR_INFO),
         getFunc = function() return CyrHUD.cfg.showPopBars or false end,
         setFunc = function(v) CyrHUD.cfg.showPopBars = v; CyrHUD:reconfigureLabels() end,
     },
     {
         type = "checkbox",
-        name = "Hide Imperial District Battles",
-        tooltip = "Hides Imperial District battles from CyrHUD notifications",
+        name = GetString(SI_CYRHUD_HIDE_IC),
+        tooltip = GetString(SI_CYRHUD_HIDE_IC_INFO),
         getFunc = function() return CyrHUD.cfg.hideImpBattles or false end,
         setFunc = function(v) CyrHUD.cfg.hideImpBattles = v; CyrHUD:reconfigureLabels() end
     },
     {
         type = "description",
-        title = "Keybind",
-        text = CZ .. "See the controls game menu for setting a keybind for the" .. CR .. "/cyrhud" .. CZ .. " command.\n"
-            .."This toggles the addon on or off."
+        title = GetString(SI_CYRHUD_KEYBIND_HEADER),
+        text = GetString(SI_CYRHUD_KEYBIND_DESC)
     }
 }
-
---TODO: Move this and other strings to proper translator format
-ZO_CreateStringId("SI_BINDING_NAME_CYRHUD_TOGGLE", "Enable/disable CyrHUD")
